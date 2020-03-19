@@ -82,8 +82,8 @@ function listMajors(auth) {
   const sheets = google.sheets({ version: 'v4', auth })
   sheets.spreadsheets.values.get(
     {
-      spreadsheetId: '1ux7ttNVuTbMaIfcW4t8tZe9Ii17F-3khXjHR8Il2dGI',
-      range: 'A:O',
+      spreadsheetId: '1nGo5s8mNRvAQVVCv-6ztMrXhVMX2MhGnV8lMTVNm4QM',
+      range: 'A:E',
     },
     (err, res) => {
       if (err) return console.log('The API returned an error: ' + err)
@@ -98,8 +98,8 @@ function listMajors(auth) {
 
       const keys = toJson.map(item => {
         return {
-          'Shipment No.:': item['Shipment No.:'],
-          'Delivery Order No.:': item['Delivery Order No.:'],
+          'Anime No:': item['Anime No:'],
+          'Title:': item['Title:'],
         }
       })
       const grouped = groupByKeys(keys, toJson)
